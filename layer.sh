@@ -1,13 +1,13 @@
 #!/bin/bash
 clear
 echo ".:: Tambah Domain Layer ::."
-echo "1. Ini khusus yg manage VPS nya pakai EasyEngine, diluar itu manggga dioprek"
+echo "1. Ini khusus yg manage VPS nya pakai EasyEngine, diluar itu silahkan dioprek"
 echo "2. isi domain tanpa http://"
-echo "3. kalo domainya banyak pisahkan koma dan spasi (hi.tk, ho.tk, he.tk)"
+echo "3. kalo domain layernya banyak pisahkan koma dan spasi (hi.tk, ho.tk, he.tk)"
 echo "========= UDAH itu saja ============"
 echo -n "Domain master [domain WP yg mau dilayer]? "
 read target
-echo -n "Domain layer [domain baru]? "
+echo -n "Domain yang mau dipointing [isi 1 atau lebih]? "
 read domain
 IFS=', ' read -r -a array <<< "$domain"
 for layer in "${array[@]}"
