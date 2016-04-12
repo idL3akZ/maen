@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 echo ".:: Tambah Domain Layer ::."
 echo "1. Ini khusus yg manage VPS nya pakai EasyEngine, diluar itu manggga dioprek"
 echo "2. isi domain tanpa http://"
