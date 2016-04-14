@@ -21,7 +21,7 @@ echo -n "Inject script layer ke /var/www/$target/wp-config.php [y or n] ? "
 read inject
 case $inject in
 	[yY] )
-		sed -i "35i /*Handle multi domain*/ define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST']); define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);" /var/www/$target/wp-config.php
+		sed -i "35i /*Handle multi domain*/ define('WP_SITEURL', 'http://' . \$_SERVER['HTTP_HOST']); define('WP_HOME', 'http://' . \$_SERVER['HTTP_HOST']);" /var/www/$target/wp-config.php
 		injectLog="Script telah terinject di /var/www/$target/wp-config.php line 35"
 		;;
 	[nN] )
