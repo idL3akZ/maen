@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-echo ".:: Tambah Domain Layer ::."
+echo ".:: Tambah Domain Layer v.1.1 ::."
 echo "1. Ini khusus yg manage VPS nya pakai EasyEngine, diluar itu silahkan dioprek"
 echo "2. isi domain tanpa http://"
 echo "3. kalo domain layernya banyak pisahkan koma dan spasi (hi.tk, ho.tk, he.tk)"
@@ -22,7 +22,7 @@ read inject
 case $inject in
 	[yY] )
 		sed -i "35i /*Handle multi domain*/ define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST']);define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);" /var/www/$target/wp-config.php
-		injectLog="Script telah terinject di /var/www/$target/wp-config.php line 33"
+		injectLog="Script telah terinject di /var/www/$target/wp-config.php line 35"
 		;;
 	[nN] )
 		injectLog="Dilewati"
