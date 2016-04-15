@@ -1,11 +1,11 @@
 #!/bin/bash
-#============== INFO SCRIPT =============
+# ============== INFO SCRIPT =============
 version="3.0"
 changelog="Mayor update, add more task option"
 urlscript="https://raw.githubusercontent.com/idL3akZ/maen/master/mvps"
 ver=$(wget -qO- --no-check-certificate $urlscript | sed '3!d' | awk -F'"' '$0=$2')
 vlog=$(wget -qO- --no-check-certificate $urlscript | sed '4!d' | awk -F'"' '$0=$2')
-#========================================
+# ========================================
 if [ $version != $ver ]
 	then
 		echo "Update info : Script mVPS update v.$ver"
@@ -15,7 +15,7 @@ if [ $version != $ver ]
 			case $update in
 				[yY] )
 					[ -f /usr/local/bin/mvps ] && rm -rf /usr/local/bin/mvps
-					wget --no-check-certificate $urlscript && chmod +x mvps
+					wget --no-check-certificate -O /usr/local/bin/mvps $urlscript && chmod +x /usr/local/bin/mvps
 					;;
 				*)
 					clear
