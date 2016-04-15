@@ -4,7 +4,7 @@ version="3.0"
 changelog="Mayor update, add more task option"
 urlscript="https://github.com/idL3akZ/maen/raw/master/mvps"
 ver=$(wget -qO- --no-check-certificate $urlscript | grep "version=" | awk -F'"' '$0=$2')
-ver=$(wget -qO- --no-check-certificate $urlscript | grep "changelog=" | awk -F'"' '$0=$2')
+vlog=$(wget -qO- --no-check-certificate $urlscript | grep "changelog=" | awk -F'"' '$0=$2')
 #========================================
 if [ $version != $ver ]
 	then
