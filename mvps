@@ -1,0 +1,43 @@
+#!/bin/bash
+#============== INFO SCRIPT =============
+version="3.0"
+changelog="Mayor update, add more task option"
+urlscript="https://github.com/idL3akZ/maen/raw/master/mvps"
+ver=$(wget -qO- --no-check-certificate $urlscript | grep "version=" | awk -F'"' '$0=$2')
+ver=$(wget -qO- --no-check-certificate $urlscript | grep "changelog=" | awk -F'"' '$0=$2')
+#========================================
+if [ $version != $ver ]
+	then
+		echo "Update info : Script mVPS update v.$ver"
+		echo "Keterangan : $vlog"
+		echo -n "Update Script mVPS ke v.$ver ? [y or n] : "
+		read update
+			case $update in
+				[yY] )
+					[ -f /usr/local/bin/mvps ] && rm -rf /usr/local/bin/mvps
+					wget --no-check-certificate $urlscript && chmod +x mvps
+					;;
+				*)
+					clear
+					echo ".::::::::::::::::::--------- mVPS v.$version --------:::::::::::::::::."
+					echo "------------------------------------------------------------------"
+					echo " Bash VPS Wordpress Management, dengan mesin EasyEngine dan WP-CLI"
+					echo "======================= T A S K - L I S T ========================"
+					echo "1. Software Installation (EasyEngine, WP-CLI, phpmyadmin, dll"
+					echo "------------------------------------------------------------------"
+					echo "2. Wordpress Installation + Default Configuration"
+					echo "3. Lihat daftar WP Master domain"
+					echo "4. Tambah domain layer"
+					echo "5. Lihat daftar domain layer"
+					echo "6. Hapus domain layer"
+					echo "------------------------------------------------------------------"
+					echo "7. Lihat Account PhpMyAdmin"
+					echo "8. Ubah Default WP User Account"
+					echo "9. Ubah ExclusiveBot User Account"
+					echo "10. Lihat Change Log bVPS-WPManagement"
+					echo ""
+					echo -n "Silahkan pilih Tasknya [1-10] : "
+					read task
+					;;
+			esac
+fi
